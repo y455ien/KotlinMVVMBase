@@ -1,10 +1,6 @@
 package com.example.kotlinmvvmbase
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
 import com.example.kotlinmvvmbase.core.base.BaseFragment
 import com.example.kotlinmvvmbase.databinding.FragmentHomeBinding
 
@@ -15,10 +11,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     override fun observeLiveData() {
-        navigate()
+
     }
 
     override fun getInitialData() {
-
+        binding.button.setOnClickListener {
+            navigate(R.id.action_homeFragment_to_homeInternal)
+        }
     }
 }
