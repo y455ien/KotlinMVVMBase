@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.base
+package com.example.kotlinmvvmbase.core.base.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -44,7 +44,7 @@ abstract class BaseActivity<VB: ViewBinding> (private val inflate: InflateActivi
     }
 
     private fun onHideLoading() {
-        (binding as? ActivityMainBinding)?.progressBar?.visibility = View.VISIBLE
+        (binding as? ActivityMainBinding)?.progressBar?.visibility = View.GONE
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.base
+package com.example.kotlinmvvmbase.core.base.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
