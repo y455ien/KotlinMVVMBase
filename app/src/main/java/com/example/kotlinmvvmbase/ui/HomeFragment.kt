@@ -1,6 +1,6 @@
-package com.example.kotlinmvvmbase
+package com.example.kotlinmvvmbase.ui
 
-import android.widget.Toast
+import com.example.kotlinmvvmbase.R
 import com.example.kotlinmvvmbase.core.base.BaseFragment
 import com.example.kotlinmvvmbase.databinding.FragmentHomeBinding
 

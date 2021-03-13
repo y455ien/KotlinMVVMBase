@@ -3,17 +3,12 @@ package com.example.kotlinmvvmbase.core.base
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.viewbinding.ViewBinding
-import com.example.kotlinmvvmbase.R
 import com.example.kotlinmvvmbase.databinding.ActivityMainBinding
+import com.example.kotlinmvvmbase.util.BaseCommunicator
 
 typealias InflateActivity<T> = (LayoutInflater) -> T
 

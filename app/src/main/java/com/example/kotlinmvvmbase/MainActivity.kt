@@ -1,16 +1,14 @@
 package com.example.kotlinmvvmbase
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.kotlinmvvmbase.core.base.BaseActivity
-import com.example.kotlinmvvmbase.core.base.BaseCommunicator
+import com.example.kotlinmvvmbase.util.BaseCommunicator
 import com.example.kotlinmvvmbase.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
