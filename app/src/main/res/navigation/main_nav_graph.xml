@@ -7,17 +7,26 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.kotlinmvvmbase.HomeFragment"
+        android:name="com.example.kotlinmvvmbase.ui.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_homeInternal"
+            app:destination="@id/homeInternal" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.kotlinmvvmbase.ProfileFragment"
+        android:name="com.example.kotlinmvvmbase.ui.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.kotlinmvvmbase.SettingsFragment"
+        android:name="com.example.kotlinmvvmbase.ui.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/homeInternal"
+        android:name="com.example.kotlinmvvmbase.ui.HomeInternal"
+        android:label="fragment_home_internal"
+        tools:layout="@layout/fragment_home_internal" />
 </navigation>
