@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.base
+package com.example.kotlinmvvmbase.core.base.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,7 +12,7 @@ abstract class BaseViewModel : ViewModel() {
     private val clientErrorStatusCode = 400..499
     private val serverErrorStatusCode = 500..599
 
-    private fun <T : Any> handleResponse(response: Response<T>, liveData: MutableLiveData<T>) {
+    protected fun <T : Any> handleResponse(response: Response<T>, liveData: MutableLiveData<T>) {
         if (response.isSuccessful)
             response.body()?.let { responseBody ->
                 liveData.postValue(responseBody)
@@ -20,7 +20,7 @@ abstract class BaseViewModel : ViewModel() {
         else handleError(response)
     }
 
-    private fun <T : Any> handleError(response: Response<T>) {
+    protected fun <T : Any> handleError(response: Response<T>) {
         when (response.code()) {
             in informationalStatusCode -> print("Yassien")
             in successfulStatusCode -> print("Yassien")

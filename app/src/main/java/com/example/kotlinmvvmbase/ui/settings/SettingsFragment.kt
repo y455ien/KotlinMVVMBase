@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.ui
+package com.example.kotlinmvvmbase.ui.settings
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

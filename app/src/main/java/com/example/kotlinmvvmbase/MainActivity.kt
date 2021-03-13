@@ -7,7 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.kotlinmvvmbase.core.base.BaseActivity
+import com.example.kotlinmvvmbase.core.base.ui.BaseActivity
 import com.example.kotlinmvvmbase.util.BaseCommunicator
 import com.example.kotlinmvvmbase.databinding.ActivityMainBinding
 

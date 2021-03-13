@@ -1,7 +1,7 @@
-package com.example.kotlinmvvmbase.ui
+package com.example.kotlinmvvmbase.ui.home
 
 import com.example.kotlinmvvmbase.R
-import com.example.kotlinmvvmbase.core.base.BaseFragment
+import com.example.kotlinmvvmbase.core.base.ui.BaseFragment
 import com.example.kotlinmvvmbase.databinding.FragmentHomeBinding
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
