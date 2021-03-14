@@ -8,7 +8,7 @@ import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.Pa
 class BaseRepository {
 
     fun getData(callback: RetroCallback<PartsList>) {
-        val call = RetroInstance.getAPI(LookupAPI::class.java).getParts("1", "2")
+        val call = RetroInstance.getAPI(LookupAPI::class.java).getUnProcessableEntityError("1", "2")
         call.enqueue(callback)
     }
 }

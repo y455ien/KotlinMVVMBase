@@ -13,6 +13,7 @@ interface LookupAPI {
                  @Query("chassis_id") chassis_id: String): Call<WebResponse<PartsList>>
 
     @GET("/api/v1/application/part-catalogue-parts")
-    fun getUnProcessableEntityError(@Query("part_catalogue_id") part_catalogue_id: String,
-                 @Query("page") page: String): Call<WebResponse<PartsList>>
+    fun getUnProcessableEntityError(
+            @Query("part_catalogue_id") part_catalogue_id: String,
+            @Query("page") page: String): Call<WebResponse<PartsList>>
 }
