@@ -2,6 +2,7 @@ package com.example.kotlinmvvmbase.util
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.navigation.NavDirections
 
 object BaseCommunicator {
     val isLoading = MutableLiveData<Boolean>()
@@ -10,7 +11,7 @@ object BaseCommunicator {
 
     val errorToast: MutableLiveData<String> = MutableLiveData()
 
-    val navigation = MutableLiveData<Int>()
+    val navigationWithAction = MutableLiveData<NavDirections>()
 
     val authorizationStatus: MutableLiveData<Boolean> = MutableLiveData()
 
@@ -22,5 +23,5 @@ object BaseCommunicator {
 
     fun updateErrorToast(string: String) = errorToast.postValue(string)
 
-    fun navigate(actionId: Int) = navigation.postValue(actionId)
+    fun navigateWithAction(action: NavDirections) = navigationWithAction.postValue(action)
 }

@@ -29,7 +29,7 @@ abstract class BaseActivity<VB : ViewBinding>(private val inflate: InflateActivi
         BaseCommunicator.isLoading.observe(this) { if (it) onShowLoading() else onHideLoading() }
         BaseCommunicator.toast.observe(this) { message -> onShowToast(message) }
         BaseCommunicator.errorToast.observe(this) { error -> onShowErrorToast(error) }
-        BaseCommunicator.navigation.observe(this) { navigationId -> navController?.navigate(navigationId) }
+        BaseCommunicator.navigationWithAction.observe(this) { navController?.navigate(it) }
         BaseCommunicator.authorizationStatus.observe(this) { if (!it) onShowToast("Unauthorized") }
     }
 
