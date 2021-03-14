@@ -23,8 +23,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     private fun setupNavControllerListener() {
         listener =
                 NavController.OnDestinationChangedListener { controller, destination, arguments ->
-                    if (BaseCommunicator.isLoading.value == true) binding.progressBar.visibility =
-                            View.GONE
+                    binding.progressBar.visibility = View.GONE
+                    when (destination.id) {
+                        R.id.homeFragment, R.id.profileFragment, R.id.settingsFragment -> binding.bottomNavigationView.visibility = View.VISIBLE
+                        else -> binding.bottomNavigationView.visibility = View.GONE
+                    }
                 }
     }
 

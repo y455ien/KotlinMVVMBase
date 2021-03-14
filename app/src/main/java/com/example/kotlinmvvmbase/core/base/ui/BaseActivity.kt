@@ -12,7 +12,7 @@ import com.example.kotlinmvvmbase.util.BaseCommunicator
 
 typealias InflateActivity<T> = (LayoutInflater) -> T
 
-abstract class BaseActivity<VB: ViewBinding> (private val inflate: InflateActivity<VB>) : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding>(private val inflate: InflateActivity<VB>) : AppCompatActivity() {
     protected lateinit var binding: VB
     protected var navController: NavController? = null
     protected lateinit var listener: NavController.OnDestinationChangedListener
@@ -26,17 +26,10 @@ abstract class BaseActivity<VB: ViewBinding> (private val inflate: InflateActivi
     }
 
     private fun observeCommunicator() {
-        BaseCommunicator.isLoading.observe(
-                this,
-                { isLoading ->
-                    if (isLoading) onShowLoading() else onHideLoading()
-                })
-        BaseCommunicator.toast.observe(
-                this,
-                { message -> Toast.makeText(this, message, Toast.LENGTH_LONG).show() })
-        BaseCommunicator.navigation.observe(
-                this,
-                { navigationId -> navController?.navigate(navigationId) })
+        BaseCommunicator.isLoading.observe(this) { if (it) onShowLoading() else onHideLoading() }
+        BaseCommunicator.toast.observe(this) { message -> onShowToast(message) }
+        BaseCommunicator.navigation.observe(this) { navigationId -> navController?.navigate(navigationId) }
+        BaseCommunicator.authorizationStatus.observe(this) { if (!it) onShowToast("Unauthorized") }
     }
 
     private fun onShowLoading() {
@@ -45,6 +38,10 @@ abstract class BaseActivity<VB: ViewBinding> (private val inflate: InflateActivi
 
     private fun onHideLoading() {
         (binding as? ActivityMainBinding)?.progressBar?.visibility = View.GONE
+    }
+
+    private fun onShowToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     override fun onSupportNavigateUp(): Boolean {

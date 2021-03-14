@@ -1,6 +1,7 @@
 package com.example.kotlinmvvmbase.core.network
 
 import com.google.gson.GsonBuilder
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -12,12 +13,19 @@ class RetroInstance {
 
         private val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
-        private val okHttp = OkHttpClient.Builder().addInterceptor(logger)
+        private val myClient = OkHttpClient.Builder().addInterceptor(Interceptor { chain ->
+            val request = chain.request().newBuilder()
+                    .addHeader("Accept", "application/json")
+                    //ToDO: Change language header when completing Caching Layer
+                    .addHeader("Accept-Language", "en")
+                    .build()
+            chain.proceed(request)
+        }).addInterceptor(logger).build()
 
         private val instance: Retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
-                .client(okHttp.build())
+                .client(myClient)
                 .build()
 
         fun <VM> getAPI(modelClass: Class<VM>): VM {

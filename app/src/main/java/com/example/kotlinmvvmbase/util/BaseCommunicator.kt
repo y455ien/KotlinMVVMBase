@@ -4,18 +4,19 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
 object BaseCommunicator {
-    private val isLoadingLiveData = MutableLiveData<Boolean>()
-    val isLoading: LiveData<Boolean> = isLoadingLiveData
+    val isLoading = MutableLiveData<Boolean>()
 
-    private val toastLiveData: MutableLiveData<String> = MutableLiveData()
-    val toast: LiveData<String> = toastLiveData
+    val toast: MutableLiveData<String> = MutableLiveData()
 
-    private val navigationLiveData = MutableLiveData<Int>()
-    val navigation: LiveData<Int> = navigationLiveData
+    val navigation = MutableLiveData<Int>()
 
-    fun updateLoadingStatus(bool: Boolean) = isLoadingLiveData.postValue(bool)
+    val authorizationStatus: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun updateToastStatue(string: String) = toastLiveData.postValue(string)
+    fun updateLoadingStatus(bool: Boolean) = isLoading.postValue(bool)
 
-    fun navigate(actionId: Int) = navigationLiveData.postValue(actionId)
+    fun updateAuthorizationStatus(bool: Boolean) = authorizationStatus.postValue(bool)
+
+    fun updateToastStatue(string: String) = toast.postValue(string)
+
+    fun navigate(actionId: Int) = navigation.postValue(actionId)
 }

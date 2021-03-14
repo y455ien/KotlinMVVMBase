@@ -5,41 +5,45 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.kotlinmvvmbase.core.base.repository.BaseRepository
 import com.example.kotlinmvvmbase.core.base.viewmodel.BaseViewModel
-import com.example.kotlinmvvmbase.core.base.viewmodel.ViewModelCallback
+import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
 import com.example.kotlinmvvmbase.core.network.RetroCallback
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.ErrorList
+import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIError
+import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIErrorType
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.PartsList
 import com.example.kotlinmvvmbase.util.BaseCommunicator
 import kotlinx.coroutines.launch
 
-class HomeInternalVM(val value: String, val repository: BaseRepository) : BaseViewModel() {
+class HomeInternalVM(val value: String, private val repository: BaseRepository) : BaseViewModel() {
     val carLiveData: MutableLiveData<PartsList> = MutableLiveData()
 
     init {
-        Log.e("YASSIEN", "VM Created")
+        Log.e("YASSIEN", "$value: View Model Created")
     }
 
     fun getData() {
         viewModelScope.launch {
-            repository.getData(RetroCallback(object : ViewModelCallback<PartsList> {
-                override fun onException(error: Throwable) {
-
-                }
-
-                override fun onError(error: ErrorList) {
-
-                }
-
+            showLoading()
+            repository.getData(RetroCallback(object : NetworkResult<PartsList> {
                 override fun onSuccess(t: PartsList) {
+                    hideLoading()
                     carLiveData.postValue(t)
                 }
 
+                override fun onError(apiError: APIError) {
+                    hideLoading()
+                    handleError(apiError)
+                }
+
+                override fun onException(error: Throwable) {
+                    hideLoading()
+                    handleException(error)
+                }
             }))
         }
     }
 
     override fun onCleared() {
         super.onCleared()
-        Log.e("YASSIEN", "VM Cleared")
+        Log.e("YASSIEN", "$value: View Model Destroyed")
     }
 }
