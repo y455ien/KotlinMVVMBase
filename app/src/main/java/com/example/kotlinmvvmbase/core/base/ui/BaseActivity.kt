@@ -28,6 +28,7 @@ abstract class BaseActivity<VB : ViewBinding>(private val inflate: InflateActivi
     private fun observeCommunicator() {
         BaseCommunicator.isLoading.observe(this) { if (it) onShowLoading() else onHideLoading() }
         BaseCommunicator.toast.observe(this) { message -> onShowToast(message) }
+        BaseCommunicator.errorToast.observe(this) { error -> onShowErrorToast(error) }
         BaseCommunicator.navigation.observe(this) { navigationId -> navController?.navigate(navigationId) }
         BaseCommunicator.authorizationStatus.observe(this) { if (!it) onShowToast("Unauthorized") }
     }
@@ -42,6 +43,10 @@ abstract class BaseActivity<VB : ViewBinding>(private val inflate: InflateActivi
 
     private fun onShowToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
+    private fun onShowErrorToast(error: String) {
+        Toast.makeText(this, error, Toast.LENGTH_LONG).show()
     }
 
     override fun onSupportNavigateUp(): Boolean {

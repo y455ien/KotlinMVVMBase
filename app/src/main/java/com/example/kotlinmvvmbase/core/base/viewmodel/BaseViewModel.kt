@@ -5,11 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIError
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIErrorType
-import com.example.kotlinmvvmbase.util.BaseCommunicator
 
 abstract class BaseViewModel : ViewModel() {
-    private val _toastLiveData: MutableLiveData<String> = MutableLiveData()
-    val toast: LiveData<String> = _toastLiveData
+    private val _errorToastLiveData: MutableLiveData<String> = MutableLiveData()
+    val errorToast: LiveData<String> = _errorToastLiveData
 
     private val _authorizationStatusLiveData: MutableLiveData<Boolean> = MutableLiveData()
     val authorizationStatus: LiveData<Boolean> = _authorizationStatusLiveData
@@ -19,9 +18,9 @@ abstract class BaseViewModel : ViewModel() {
 
     protected fun handleError(apiError: APIError) {
         when (apiError.errorType) {
-            APIErrorType.UNKNOWN -> showToast("Something went wrong")
+            APIErrorType.UNKNOWN -> showErrorToast("Something went wrong")
             APIErrorType.UN_AUTHORIZED -> _authorizationStatusLiveData.postValue(false)
-            APIErrorType.SERVER -> apiError.errors?.first()?.message?.let { showToast(it) }
+            APIErrorType.SERVER -> apiError.errors?.first()?.message?.let { showErrorToast(it) }
         }
     }
 
@@ -37,7 +36,7 @@ abstract class BaseViewModel : ViewModel() {
         _loadingStatusLiveData.postValue(false)
     }
 
-    protected fun showToast(message: String) {
-        _toastLiveData.postValue(message)
+    protected fun showErrorToast(error: String) {
+        _errorToastLiveData.postValue(error)
     }
 }

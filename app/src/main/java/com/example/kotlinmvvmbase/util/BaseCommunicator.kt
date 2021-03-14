@@ -8,6 +8,8 @@ object BaseCommunicator {
 
     val toast: MutableLiveData<String> = MutableLiveData()
 
+    val errorToast: MutableLiveData<String> = MutableLiveData()
+
     val navigation = MutableLiveData<Int>()
 
     val authorizationStatus: MutableLiveData<Boolean> = MutableLiveData()
@@ -16,7 +18,9 @@ object BaseCommunicator {
 
     fun updateAuthorizationStatus(bool: Boolean) = authorizationStatus.postValue(bool)
 
-    fun updateToastStatue(string: String) = toast.postValue(string)
+    fun updateToast(string: String) = toast.postValue(string)
+
+    fun updateErrorToast(string: String) = errorToast.postValue(string)
 
     fun navigate(actionId: Int) = navigation.postValue(actionId)
 }
