@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.kotlinmvvmbase.ui.home.HomeFragment"
+        android:name="com.example.kotlinmvvmbase.modules.business.ui.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,17 +16,17 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.kotlinmvvmbase.ui.profile.ProfileFragment"
+        android:name="com.example.kotlinmvvmbase.modules.business.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.kotlinmvvmbase.ui.settings.SettingsFragment"
+        android:name="com.example.kotlinmvvmbase.modules.business.ui.settings.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/homeInternal"
-        android:name="com.example.kotlinmvvmbase.ui.home.internal_home.HomeInternal"
+        android:name="com.example.kotlinmvvmbase.modules.business.ui.home.internal_home.HomeInternal"
         android:label="fragment_home_internal"
         tools:layout="@layout/fragment_home_internal" />
     <fragment
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.kotlinmvvmbase.LoginFragment"
+        android:name="com.example.kotlinmvvmbase.modules.authentication.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.example.kotlinmvvmbase.SignupFragment"
+        android:name="com.example.kotlinmvvmbase.modules.authentication.ui.SignupFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="com.example.kotlinmvvmbase.VerificationFragment"
+        android:name="com.example.kotlinmvvmbase.modules.authentication.ui.VerificationFragment"
         android:label="fragment_verification"
         tools:layout="@layout/fragment_verification" >
         <action

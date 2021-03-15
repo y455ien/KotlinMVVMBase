@@ -1,27 +1,25 @@
-package com.example.kotlinmvvmbase
+package com.example.kotlinmvvmbase.modules.authentication.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavDirections
-import com.example.kotlinmvvmbase.core.base.repository.BaseRepository
 import com.example.kotlinmvvmbase.core.base.ui.BaseFragment
 import com.example.kotlinmvvmbase.databinding.FragmentLoginBinding
-import com.example.kotlinmvvmbase.util.BaseCommunicator
+import com.example.kotlinmvvmbase.modules.authentication.viewmodel.LoginFragmentVM
 import com.example.kotlinmvvmbase.util.GenericViewModelFactory
-import com.example.kotlinmvvmbase.viewmodel.HomeInternalVM
 
 
 class LoginFragment :
-    BaseFragment<FragmentLoginBinding, HomeInternalVM>(FragmentLoginBinding::inflate) {
-    private lateinit var factory: GenericViewModelFactory<HomeInternalVM>
+        BaseFragment<FragmentLoginBinding, LoginFragmentVM>(FragmentLoginBinding::inflate) {
+    private lateinit var factory: GenericViewModelFactory<LoginFragmentVM>
 
-    override fun initViewModel(): HomeInternalVM {
+    override fun initViewModel(): LoginFragmentVM {
         factory = GenericViewModelFactory(
-            { HomeInternalVM("Home Internal", BaseRepository()) },
-            HomeInternalVM::class.java
+                { LoginFragmentVM() },
+                LoginFragmentVM::class.java
         )
-        return ViewModelProvider(this, factory).get(HomeInternalVM::class.java)
+        return ViewModelProvider(this, factory).get(LoginFragmentVM::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,5 +38,4 @@ class LoginFragment :
             navigateWithAction(action)
         }
     }
-
 }

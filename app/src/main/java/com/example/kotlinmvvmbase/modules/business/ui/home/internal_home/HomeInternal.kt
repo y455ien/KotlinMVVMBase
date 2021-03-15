@@ -1,21 +1,19 @@
-package com.example.kotlinmvvmbase.ui.home.internal_home
+package com.example.kotlinmvvmbase.modules.business.ui.home.internal_home
 
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.kotlinmvvmbase.core.base.repository.BaseRepository
 import com.example.kotlinmvvmbase.core.base.ui.BaseFragment
-import com.example.kotlinmvvmbase.core.base.viewmodel.BaseViewModel
 import com.example.kotlinmvvmbase.util.GenericViewModelFactory
 import com.example.kotlinmvvmbase.databinding.FragmentHomeInternalBinding
-import com.example.kotlinmvvmbase.viewmodel.HomeInternalVM
+import com.example.kotlinmvvmbase.modules.business.repository.CarRepository
+import com.example.kotlinmvvmbase.modules.business.viewmodel.HomeInternalVM
 
 class HomeInternal : BaseFragment<FragmentHomeInternalBinding, HomeInternalVM>(FragmentHomeInternalBinding::inflate) {
     private lateinit var factory: GenericViewModelFactory<HomeInternalVM>
 
     override fun initViewModel(): HomeInternalVM {
-        factory = GenericViewModelFactory({ HomeInternalVM("Home Internal", BaseRepository()) }, HomeInternalVM::class.java)
+        factory = GenericViewModelFactory({ HomeInternalVM("Home Internal", CarRepository()) }, HomeInternalVM::class.java)
         return ViewModelProvider(this, factory).get(HomeInternalVM::class.java)
     }
 
