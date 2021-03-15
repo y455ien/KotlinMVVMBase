@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.network_manual_parsing
+package com.example.kotlinmvvmbase.core.network_manual_parsing.client
 
 import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIError
