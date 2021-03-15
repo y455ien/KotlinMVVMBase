@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.network_manual_parsing
+package com.example.kotlinmvvmbase.core.network_manual_parsing.api
 
 import com.google.gson.JsonElement
 import retrofit2.Call
