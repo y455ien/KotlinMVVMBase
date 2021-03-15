@@ -1,14 +1,7 @@
 package com.example.kotlinmvvmbase.core.base.repository
 
-import com.example.kotlinmvvmbase.core.network.RetroCallback
 import com.example.kotlinmvvmbase.core.network.RetroInstance
-import com.example.kotlinmvvmbase.core.network.api_service.LookupAPI
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.PartsList
 
-class BaseRepository {
-
-    fun getData(callback: RetroCallback<PartsList>) {
-        val call = RetroInstance.getAPI(LookupAPI::class.java).getUnProcessableEntityError("1", "2")
-        call.enqueue(callback)
-    }
+abstract class BaseRepository<T>(apiInterface: Class<T>) {
+    protected val api: T = RetroInstance.getAPI(apiInterface)
 }

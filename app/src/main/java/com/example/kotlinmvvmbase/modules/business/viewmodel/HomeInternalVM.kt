@@ -1,19 +1,17 @@
-package com.example.kotlinmvvmbase.viewmodel
+package com.example.kotlinmvvmbase.modules.business.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.kotlinmvvmbase.core.base.repository.BaseRepository
 import com.example.kotlinmvvmbase.core.base.viewmodel.BaseViewModel
 import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
 import com.example.kotlinmvvmbase.core.network.RetroCallback
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIError
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIErrorType
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.PartsList
-import com.example.kotlinmvvmbase.util.BaseCommunicator
+import com.example.kotlinmvvmbase.modules.business.repository.CarRepository
 import kotlinx.coroutines.launch
 
-class HomeInternalVM(val value: String, private val repository: BaseRepository) : BaseViewModel() {
+class HomeInternalVM(val value: String, private val repository: CarRepository) : BaseViewModel() {
     val carLiveData: MutableLiveData<PartsList> = MutableLiveData()
 
     init {
