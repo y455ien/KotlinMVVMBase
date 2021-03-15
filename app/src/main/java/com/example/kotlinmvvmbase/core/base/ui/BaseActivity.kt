@@ -6,7 +6,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.viewbinding.ViewBinding
+import com.example.kotlinmvvmbase.R
 import com.example.kotlinmvvmbase.databinding.ActivityMainBinding
 import com.example.kotlinmvvmbase.util.BaseCommunicator
 
@@ -29,7 +31,7 @@ abstract class BaseActivity<VB : ViewBinding>(private val inflate: InflateActivi
         BaseCommunicator.isLoading.observe(this) { if (it) onShowLoading() else onHideLoading() }
         BaseCommunicator.toast.observe(this) { message -> onShowToast(message) }
         BaseCommunicator.errorToast.observe(this) { error -> onShowErrorToast(error) }
-        BaseCommunicator.navigationWithAction.observe(this) { navController?.navigate(it) }
+        BaseCommunicator.navigationWithAction.observe(this) { navController?.navigate(it.destination, it.navOptions) }
         BaseCommunicator.authorizationStatus.observe(this) { if (!it) onShowToast("Unauthorized") }
     }
 

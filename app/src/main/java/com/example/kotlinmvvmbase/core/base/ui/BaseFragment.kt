@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavAction
 import androidx.navigation.NavDirections
 import androidx.viewbinding.ViewBinding
+import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
 import com.example.kotlinmvvmbase.core.base.viewmodel.BaseViewModel
 import com.example.kotlinmvvmbase.util.BaseCommunicator
 
@@ -35,8 +36,8 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(private val in
         return binding.root
     }
 
-    protected fun navigateWithAction(action: NavDirections) {
-        BaseCommunicator.navigateWithAction(action)
+    protected fun navigateWithAction(destination: NavDestinationWrapper) {
+        BaseCommunicator.navigateWithAction(destination)
     }
 
     protected fun showToast(message: String) {
