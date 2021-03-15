@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.kotlinmvvmbase.core.base.viewmodel.BaseViewModel
 import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
-import com.example.kotlinmvvmbase.core.network.RetroCallback
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIError
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.PartsList
+import com.example.kotlinmvvmbase.core.network_manual_parsing.RequestHandler
 import com.example.kotlinmvvmbase.modules.business.repository.CarRepository
 import kotlinx.coroutines.launch
 
@@ -21,7 +21,7 @@ class HomeInternalVM(val value: String, private val repository: CarRepository) :
     fun getData() {
         viewModelScope.launch {
             showLoading()
-            repository.getData(RetroCallback(object : NetworkResult<PartsList> {
+            repository.getData(RequestHandler(PartsList::class.java, object : NetworkResult<PartsList> {
                 override fun onSuccess(t: PartsList) {
                     hideLoading()
                     carLiveData.postValue(t)

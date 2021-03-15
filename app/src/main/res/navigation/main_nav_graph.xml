@@ -31,7 +31,7 @@
         tools:layout="@layout/fragment_home_internal" />
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.kotlinmvvmbase.SplashFragment"
+        android:name="com.example.kotlinmvvmbase.modules.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action

@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase
+package com.example.kotlinmvvmbase.modules.splash
 
 import android.os.Bundle
 import android.view.View
