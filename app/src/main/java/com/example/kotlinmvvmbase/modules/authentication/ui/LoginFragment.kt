@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
 import com.example.kotlinmvvmbase.core.base.ui.BaseFragment
 import com.example.kotlinmvvmbase.databinding.FragmentLoginBinding
 import com.example.kotlinmvvmbase.modules.authentication.viewmodel.LoginFragmentVM
@@ -28,14 +29,14 @@ class LoginFragment :
             var userInput = binding.textInputLayout.editText?.text.toString()
             if (userInput.contentEquals("1234")) {
                 val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
-                navigateWithAction(action)
+                navigateWithAction(NavDestinationWrapper(action))
             } else {
                 showToast("Wrong input")
             }
         }
         binding.signUpButton.setOnClickListener() {
             val action = LoginFragmentDirections.actionLoginFragmentToSignupFragment()
-            navigateWithAction(action)
+            navigateWithAction(NavDestinationWrapper(action))
         }
     }
 }

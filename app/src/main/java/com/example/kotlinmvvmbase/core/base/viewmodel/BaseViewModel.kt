@@ -18,7 +18,7 @@ abstract class BaseViewModel : ViewModel() {
 
     protected fun handleError(apiError: APIError) {
         when (apiError.errorType) {
-            APIErrorType.UNKNOWN -> showErrorToast("Something went wrong")
+            APIErrorType.UNKNOWN -> showErrorToast(apiError.unknownErrorMessage)
             APIErrorType.UN_AUTHORIZED -> _authorizationStatusLiveData.postValue(false)
             APIErrorType.SERVER -> apiError.errors?.first()?.message?.let { showErrorToast(it) }
         }

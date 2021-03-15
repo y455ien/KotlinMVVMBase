@@ -3,6 +3,7 @@ package com.example.kotlinmvvmbase.modules.business.ui.home
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
 import com.example.kotlinmvvmbase.core.base.ui.BaseFragment
 import com.example.kotlinmvvmbase.databinding.FragmentHomeBinding
 import com.example.kotlinmvvmbase.modules.business.viewmodel.HomeFragmentVM
@@ -20,7 +21,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeFragmentVM>(FragmentH
         super.onViewCreated(view, savedInstanceState)
         binding.button.setOnClickListener() {
             val action = HomeFragmentDirections.actionHomeFragmentToHomeInternal()
-            navigateWithAction(action)
+            navigateWithAction(NavDestinationWrapper(action))
         }
     }
 
