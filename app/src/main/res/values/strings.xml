@@ -2,4 +2,8 @@
     <string name="app_name">KotlinMVVMBase</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="SPLASH">splash screen</string>
+    <string name="login">Login</string>
+    <string name="go_inside">Go inside</string>
+    <string name="change_language">Change Language</string>
 </resources>

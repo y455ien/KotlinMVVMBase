@@ -3,8 +3,8 @@ package com.example.kotlinmvvmbase.core.base.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIError
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIErrorType
+import com.example.kotlinmvvmbase.core.network.model.error.APIError
+import com.example.kotlinmvvmbase.core.network.model.error.APIErrorType
 
 abstract class BaseViewModel : ViewModel() {
     private val _errorToastLiveData: MutableLiveData<String> = MutableLiveData()

@@ -1,8 +1,8 @@
 package com.example.kotlinmvvmbase.core.network
 
 import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIErrorType
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIError
+import com.example.kotlinmvvmbase.core.network.model.error.APIErrorType
+import com.example.kotlinmvvmbase.core.network.model.error.APIError
 import com.google.gson.Gson
 import okhttp3.ResponseBody
 import retrofit2.Call
