@@ -22,19 +22,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     private fun setupNavControllerListener() {
         listener =
-            NavController.OnDestinationChangedListener { controller, destination, arguments ->
-                binding.progressBar.visibility = View.GONE
-                when (destination.id) {
-                    R.id.homeFragment,
-                    R.id.profileFragment,
-                    R.id.settingsFragment -> binding.bottomNavigationView.visibility = View.VISIBLE
-                    else -> binding.bottomNavigationView.visibility = View.GONE
+                NavController.OnDestinationChangedListener { controller, destination, arguments ->
+                    binding.progressBar.visibility = View.GONE
+                    when (destination.id) {
+                        R.id.homeFragment,
+                        R.id.profileFragment,
+                        R.id.settingsFragment -> binding.bottomNavigationView.visibility = View.VISIBLE
+                        else -> binding.bottomNavigationView.visibility = View.GONE
+                    }
+                    when (destination.id) {
+                        R.id.splashFragment,
+                        R.id.loginFragment -> supportActionBar?.hide()
+                        else -> supportActionBar?.show()
+                    }
                 }
-                when (destination.id) {
-                    R.id.splashFragment -> supportActionBar?.hide()
-                    else -> supportActionBar?.show()
-                }
-            }
     }
 
     private fun setupNavController() {
@@ -43,13 +44,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     private fun setupAppBar() {
         val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.splashFragment,
-                R.id.loginFragment,
-                R.id.homeFragment,
-                R.id.profileFragment,
-                R.id.settingsFragment
-            )
+                setOf(
+                        R.id.splashFragment,
+                        R.id.loginFragment,
+                        R.id.homeFragment,
+                        R.id.profileFragment,
+                        R.id.settingsFragment,
+                )
         )
         navController?.let { setupActionBarWithNavController(navController!!, appBarConfiguration) }
     }

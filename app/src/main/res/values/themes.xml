@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.KotlinMVVMBase" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryVariant">@color/secondary_color</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,5 +12,31 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorOnSurface">@color/border_grey</item>
     </style>
+
+    <style name="outlined_button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:padding">16dp</item>
+        <item name="strokeColor">@color/primary_color</item>
+        <item name="strokeWidth">5dp</item>
+<!--        <item name="android:textColor">@android:color/holo_green_light</item>-->
+<!--        <item name="android:strokeColor">@android:color/holo_green_light</item>-->
+    </style>
+
+    <style name="filled_button" parent="Widget.MaterialComponents.Button">
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="text_button" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="title" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Display1</item>
+    </style>
+
 </resources>

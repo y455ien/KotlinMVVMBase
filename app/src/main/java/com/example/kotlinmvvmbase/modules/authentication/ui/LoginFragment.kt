@@ -25,24 +25,18 @@ class LoginFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.loginButton.setOnClickListener() {
-            var userInput = binding.textInputLayout.editText?.text.toString()
-            if (userInput.contentEquals("1234")) {
-                val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
-                navigateWithAction(NavDestinationWrapper(action))
-            } else {
-                showToast("Wrong input")
-            }
-        }
-        binding.signUpButton.setOnClickListener() {
-//            lifecycleScope.launch {
-//                Cache.instance(activity)?.swapLanguage()
-//                delay(1000)
-//                Log.e("YASSIEN", "DONE")
-//                activity?.recreate()
+//        binding.loginButton.setOnClickListener() {
+//            var userInput = binding.textInputLayout.editText?.text.toString()
+//            if (userInput.contentEquals("1234")) {
+//                val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+//                navigateWithAction(NavDestinationWrapper(action))
+//            } else {
+//                showToast("Wrong input")
 //            }
-            val action = LoginFragmentDirections.actionLoginFragmentToSignupFragment()
-            navigateWithAction(NavDestinationWrapper(action))
-        }
+//        }
+//        binding.signUpButton.setOnClickListener() {
+//            val action = LoginFragmentDirections.actionLoginFragmentToSignupFragment()
+//            navigateWithAction(NavDestinationWrapper(action))
+//        }
     }
 }
