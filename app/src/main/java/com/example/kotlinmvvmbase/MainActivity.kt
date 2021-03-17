@@ -8,10 +8,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.kotlinmvvmbase.core.base.ui.BaseActivity
-import com.example.kotlinmvvmbase.util.BaseCommunicator
 import com.example.kotlinmvvmbase.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupNavController()
@@ -56,5 +56,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     private fun setupBottomNav() {
         navController?.let { binding.bottomNavigationView.setupWithNavController(navController!!) }
+    }
+
+    override fun onResume() {
+        super.onResume()
     }
 }

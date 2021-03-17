@@ -1,8 +1,8 @@
 package com.example.kotlinmvvmbase.modules.authentication.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
 import com.example.kotlinmvvmbase.core.base.ui.BaseFragment
@@ -35,6 +35,12 @@ class LoginFragment :
             }
         }
         binding.signUpButton.setOnClickListener() {
+//            lifecycleScope.launch {
+//                Cache.instance(activity)?.swapLanguage()
+//                delay(1000)
+//                Log.e("YASSIEN", "DONE")
+//                activity?.recreate()
+//            }
             val action = LoginFragmentDirections.actionLoginFragmentToSignupFragment()
             navigateWithAction(NavDestinationWrapper(action))
         }

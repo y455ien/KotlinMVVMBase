@@ -63,4 +63,6 @@ dependencies {
 
     def rx_kotlin_version = "3.0.1"
     implementation "io.reactivex.rxjava3:rxkotlin:$rx_kotlin_version"
+
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
 }

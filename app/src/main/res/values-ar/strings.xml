@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KotlinMVVMBase</string>
+    <string name="SPLASH">سبلاش</string>
+    <string name="login">دخول</string>
+    <string name="go_inside">إستمر</string>
+    <string name="change_language">تغير اللغة</string>
+</resources>

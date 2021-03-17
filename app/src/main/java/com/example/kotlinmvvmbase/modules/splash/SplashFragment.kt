@@ -1,7 +1,10 @@
 package com.example.kotlinmvvmbase.modules.splash
 
 import android.os.Bundle
+import android.os.LocaleList
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.kotlinmvvmbase.R

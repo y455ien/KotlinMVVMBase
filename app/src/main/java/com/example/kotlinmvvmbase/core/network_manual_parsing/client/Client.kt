@@ -2,6 +2,7 @@ package com.example.kotlinmvvmbase.core.network_manual_parsing.client
 
 import com.example.kotlinmvvmbase.core.config.AppConfig
 import com.example.kotlinmvvmbase.core.network_manual_parsing.api.APIService
+import com.example.kotlinmvvmbase.constant.Constant
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -17,18 +18,17 @@ class Client {
         private val okHttpClient = OkHttpClient.Builder()
                 .addInterceptor(Interceptor { chain ->
                     val request = chain.request().newBuilder()
-                            .addHeader("Accept", "application/json")
-                            .addHeader("Content-Type", "application/json")
-                            //ToDO: Change language header when completing Caching Layer
-                            .addHeader("Accept-Language", "en")
+                            .addHeader("Accept", Constant.Network.ACCEPT_HEADER)
+                            .addHeader("Content-Type", Constant.Network.CONTENT_TYPE_HEADER)
+                            .addHeader("Accept-Language", AppConfig.USER_LANG)
                             .build()
                     chain.proceed(request)
                 })
                 .addInterceptor(httpLoggingInterceptor)
-                .readTimeout(60, TimeUnit.SECONDS)
-                .connectTimeout(60, TimeUnit.SECONDS)
-                .callTimeout(60, TimeUnit.SECONDS)
-                .writeTimeout(60, TimeUnit.SECONDS)
+                .readTimeout(Constant.Network.READ_TIMEOUT, TimeUnit.SECONDS)
+                .connectTimeout(Constant.Network.CONNECT_TIMEOUT, TimeUnit.SECONDS)
+                .callTimeout(Constant.Network.CALL_TIMEOUT, TimeUnit.SECONDS)
+                .writeTimeout(Constant.Network.WRITE_TIMEOUT, TimeUnit.SECONDS)
                 .build()
 
         val connect: APIService = Retrofit.Builder()

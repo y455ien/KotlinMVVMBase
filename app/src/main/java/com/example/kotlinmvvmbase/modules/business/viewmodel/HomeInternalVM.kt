@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.kotlinmvvmbase.core.base.viewmodel.BaseViewModel
 import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.error.APIError
+import com.example.kotlinmvvmbase.core.network.model.error.APIError
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.PartsList
 import com.example.kotlinmvvmbase.core.network_manual_parsing.client.RequestHandler
 import com.example.kotlinmvvmbase.modules.business.repository.CarRepository
