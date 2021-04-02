@@ -1,4 +1,4 @@
-package com.intcore.aerbagprovider.widget.file_picker
+package com.example.kotlinmvvmbase.widget.file_picker
 
 import android.app.Activity
 import android.content.Intent
@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.kotlinmvvmbase.databinding.FragmentFilePickerDialogBinding
+import com.example.kotlinmvvmbase.enum.FilePickerType
+import com.example.kotlinmvvmbase.util.extension.setNavigationResult
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.intcore.aerbagprovider.databinding.FragmentFilePickerDialogBinding
-import com.intcore.aerbagprovider.enum.FilePickerType
-import com.intcore.aerbagprovider.util.extension.setNavigationResult
 import java.io.File
 
 

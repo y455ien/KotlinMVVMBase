@@ -1,4 +1,4 @@
-package com.intcore.aerbagprovider.widget.location_picker
+package com.example.kotlinmvvmbase.widget.location_picker
 
 import android.os.Parcel
 import android.os.Parcelable

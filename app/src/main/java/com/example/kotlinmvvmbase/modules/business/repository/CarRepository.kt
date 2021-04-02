@@ -13,8 +13,8 @@ class CarRepository : BaseRepository() {
         call.enqueue(callback)
     }
 
-    fun changeLanguage() {
-        swapLanguage()
-    }
+//    fun changeLanguage() {
+//        swapLanguage()
+//    }
 
 }

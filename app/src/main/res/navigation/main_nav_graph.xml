@@ -71,4 +71,20 @@
             android:id="@+id/action_verificationFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+
+    <dialog
+        android:id="@+id/filePickerDialog"
+        android:name="com.example.kotlinmvvmbase.widget.file_picker.FilePickerDialog"
+        android:label="fragment_file_picker_dialog"
+        tools:layout="@layout/fragment_file_picker_dialog" >
+        <argument
+            android:name="type"
+            app:argType="com.example.kotlinmvvmbase.enum.FilePickerType" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/locationPicker"
+        android:name="com.example.kotlinmvvmbase.widget.location_picker.LocationPicker"
+        android:label="fragment_location_picker"
+        tools:layout="@layout/fragment_location_picker" />
 </navigation>

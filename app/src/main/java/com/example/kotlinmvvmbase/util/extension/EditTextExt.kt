@@ -1,10 +1,9 @@
-package com.intcore.aerbagprovider.util.extension
+package com.example.kotlinmvvmbase.util.extension
 
 import android.text.Editable
 import android.text.TextWatcher
+import com.example.kotlinmvvmbase.util.ValidationCriteria
 import com.google.android.material.textfield.TextInputLayout
-import com.intcore.aerbagprovider.util.ValidationCriteria
-import com.intcore.aerbagprovider.util.Validator
 
 fun TextInputLayout.getValueString(): String {
     return this.editText?.text.toString().trim()

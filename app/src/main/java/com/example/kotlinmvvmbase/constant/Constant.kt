@@ -1,6 +1,10 @@
 package com.example.kotlinmvvmbase.constant
 
 object Constant {
+    object UI {
+        const val SPLASH_DURATION: Long = 2000
+    }
+
     object Cache {
         const val PREFERENCE_FILE_NAME = "USER CACHE"
         const val USER_KEY = "USER"

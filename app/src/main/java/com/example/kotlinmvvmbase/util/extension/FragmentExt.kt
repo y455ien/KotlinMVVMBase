@@ -1,4 +1,4 @@
-package com.intcore.aerbagprovider.util.extension
+package com.example.kotlinmvvmbase.util.extension
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment

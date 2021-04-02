@@ -1,4 +1,4 @@
-package com.intcore.aerbagprovider.widget.location_picker
+package com.example.kotlinmvvmbase.widget.location_picker
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -15,6 +15,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import com.example.kotlinmvvmbase.core.base.repository.Cache
+import com.example.kotlinmvvmbase.core.base.ui.BaseCommunicator
+import com.example.kotlinmvvmbase.databinding.FragmentLocationPickerBinding
+import com.example.kotlinmvvmbase.util.extension.setNavigationResult
 import com.google.android.gms.location.*
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -24,11 +28,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.intcore.aerbagprovider.R
-import com.intcore.aerbagprovider.core.base.repository.Cache
-import com.intcore.aerbagprovider.core.base.ui.BaseCommunicator
-import com.intcore.aerbagprovider.databinding.FragmentLocationPickerBinding
-import com.intcore.aerbagprovider.util.extension.setNavigationResult
+import com.example.kotlinmvvmbase.R
 
 class LocationPicker : Fragment() {
     private var _binding: FragmentLocationPickerBinding? = null

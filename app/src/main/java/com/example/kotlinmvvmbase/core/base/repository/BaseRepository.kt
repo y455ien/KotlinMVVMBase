@@ -6,27 +6,10 @@ import com.example.kotlinmvvmbase.core.network_manual_parsing.client.Client
 
 abstract class BaseRepository() {
     protected val client = Client
-    private val cache = Cache
+//    protected val userCache = Cache.USER
+    protected val langCache = Cache.LANGUAGE
 
-    fun cacheUser() {
-        //ToDO: Implement method once User model provided
+    fun validateCache(): Boolean {
+        return Cache.isInitialized()
     }
-
-    fun getCachedUser() {
-        //ToDO: Implement method once User model provided
-    }
-
-    fun getCachedLanguage() {
-
-    }
-
-    fun removeCachedUser() {
-        cache.removeUser()
-    }
-
-    fun swapLanguage() {
-        cache.swapLanguageAsync()
-        BaseCommunicator.pushSwapLanguageEvent(true)
-    }
-
 }

@@ -9,6 +9,6 @@ class HomeFragmentVM : BaseViewModel() {
     private val repo = CarRepository()
 
     fun swapLanguage() {
-        repo.changeLanguage()
+//        repo.changeLanguage()
     }
 }

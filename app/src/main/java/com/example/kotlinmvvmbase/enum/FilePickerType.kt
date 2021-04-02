@@ -1,4 +1,4 @@
-package com.intcore.aerbagprovider.enum
+package com.example.kotlinmvvmbase.enum
 
 enum class FilePickerType {
     FILE,

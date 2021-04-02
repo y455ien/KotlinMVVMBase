@@ -1,4 +1,4 @@
-package com.intcore.aerbagprovider.util.extension
+package com.example.kotlinmvvmbase.util.extension
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

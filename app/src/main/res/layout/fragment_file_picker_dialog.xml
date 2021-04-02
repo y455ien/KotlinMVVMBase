@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/ic_mail"
+        android:background="@drawable/ic_home"
         app:layout_constraintBottom_toBottomOf="@id/pick_image_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/pick_image_title" />
@@ -40,7 +40,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/ic_mail"
+        android:background="@drawable/ic_home"
         app:layout_constraintBottom_toBottomOf="@id/pick_file_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/pick_file_title" />
