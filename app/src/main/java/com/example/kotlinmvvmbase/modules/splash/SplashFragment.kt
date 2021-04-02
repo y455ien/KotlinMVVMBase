@@ -34,7 +34,7 @@ class SplashFragment :
         super.onViewCreated(view, savedInstanceState)
         lifecycleScope.launch {
             delay(3000)
-            val action = SplashFragmentDirections.actionSplashFragmentToLoginFragment()
+            val action = SplashFragmentDirections.actionSplashFragmentToHomeFragment()
             navigateWithAction(NavDestinationWrapper(action, popUpTo = R.id.main_nav_graph, isInclusive = true))
         }
     }

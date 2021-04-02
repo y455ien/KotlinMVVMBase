@@ -45,7 +45,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.splashFragment,
-                R.id.loginFragment,
                 R.id.homeFragment,
                 R.id.profileFragment,
                 R.id.settingsFragment
