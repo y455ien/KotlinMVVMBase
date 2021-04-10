@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.base.ui
+package com.example.kotlinmvvmbase.core.base.viewmodel
 
 
 class SingleLiveEvent<T>(private val value: T) {

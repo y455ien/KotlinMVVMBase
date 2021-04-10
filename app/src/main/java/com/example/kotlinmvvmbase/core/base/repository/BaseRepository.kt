@@ -1,7 +1,7 @@
 package com.example.kotlinmvvmbase.core.base.repository
 
-import com.example.kotlinmvvmbase.core.base.ui.BaseCommunicator
 import com.example.kotlinmvvmbase.core.network_manual_parsing.client.Client
+import java.util.*
 
 
 abstract class BaseRepository() {
@@ -11,5 +11,9 @@ abstract class BaseRepository() {
 
     fun validateCache(): Boolean {
         return Cache.isInitialized()
+    }
+
+    fun getLocale(): Locale {
+        return Cache.LANGUAGE.getCachedLocale()
     }
 }

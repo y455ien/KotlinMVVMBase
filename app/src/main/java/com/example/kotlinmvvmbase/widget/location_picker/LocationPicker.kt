@@ -16,7 +16,6 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.example.kotlinmvvmbase.core.base.repository.Cache
-import com.example.kotlinmvvmbase.core.base.ui.BaseCommunicator
 import com.example.kotlinmvvmbase.databinding.FragmentLocationPickerBinding
 import com.example.kotlinmvvmbase.util.extension.setNavigationResult
 import com.google.android.gms.location.*
@@ -125,7 +124,7 @@ class LocationPicker : Fragment() {
     private fun checkLocationService() {
         var isLocationServiceEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
         if (!isLocationServiceEnabled) {
-            BaseCommunicator.pushToastEvent("Location service is disabled")
+//            BaseCommunicator.pushToastEvent("Location service is disabled")
         } else {
             getDeviceLocation()
         }
@@ -137,7 +136,7 @@ class LocationPicker : Fragment() {
         locationResult.addOnCompleteListener { task ->
             when {
                 task.isSuccessful -> handleCurrentLocation(task.result)
-                task.isCanceled -> BaseCommunicator.pushErrorEvent("We can't get your current location, please select location manually")
+//                task.isCanceled -> BaseCommunicator.pushErrorEvent("We can't get your current location, please select location manually")
             }
         }
     }

@@ -6,7 +6,7 @@ typealias ValidationCriteria = (String) -> String?
 
 class Validator {
     companion object {
-        const val passwordRegExp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
+        private const val passwordRegExp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
 
         fun validateEmpty(string: String): String? {
             return if (TextUtils.isEmpty(string.trim())) "Field can't be empty"

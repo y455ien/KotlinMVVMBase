@@ -3,7 +3,7 @@ package com.example.kotlinmvvmbase.modules.business.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.kotlinmvvmbase.core.base.viewmodel.BaseViewModel
+import com.example.kotlinmvvmbase.core.base.viewmodel.BaseFragmentViewModel
 import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
 import com.example.kotlinmvvmbase.core.network.model.error.APIError
 import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.PartsList
@@ -11,7 +11,7 @@ import com.example.kotlinmvvmbase.core.network_manual_parsing.client.RequestHand
 import com.example.kotlinmvvmbase.modules.business.repository.CarRepository
 import kotlinx.coroutines.launch
 
-class HomeInternalVM(val value: String, private val repository: CarRepository) : BaseViewModel() {
+class HomeInternalVM(val value: String, private val repository: CarRepository) : BaseFragmentViewModel() {
     val carLiveData: MutableLiveData<PartsList> = MutableLiveData()
 
     init {

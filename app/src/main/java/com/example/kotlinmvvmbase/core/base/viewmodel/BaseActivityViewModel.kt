@@ -1,9 +1,10 @@
-package com.example.kotlinmvvmbase.core.base.ui
+package com.example.kotlinmvvmbase.core.base.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
 
-object BaseCommunicator {
+abstract class BaseActivityViewModel: ViewModel() {
     val getIsLoadingEvent: MutableLiveData<SingleLiveEvent<Boolean>> = MutableLiveData()
 
     val getToastEvent: MutableLiveData<SingleLiveEvent<String>> = MutableLiveData()
