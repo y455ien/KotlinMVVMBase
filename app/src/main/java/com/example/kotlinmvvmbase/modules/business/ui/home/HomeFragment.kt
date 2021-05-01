@@ -23,7 +23,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeFragmentVM, BusinessA
         binding.goInternalButton.setOnClickListener() {
 //            val action = HomeFragmentDirections.actionHomeFragmentToHomeInternal()
 //            vm.navigateWithAction(NavDestinationWrapper(action))
-            vm.showLoading()
+//            vm.showLoading()
+//            vm.vmTrial()
+//            vm.exceptionTest()
+            vm.login()
         }
         binding.changeLanguageButton.setOnClickListener {
             vm.hideLoading()

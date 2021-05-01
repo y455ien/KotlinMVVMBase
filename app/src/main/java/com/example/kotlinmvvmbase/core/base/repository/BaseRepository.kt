@@ -1,12 +1,18 @@
 package com.example.kotlinmvvmbase.core.base.repository
 
 import com.example.kotlinmvvmbase.core.network_manual_parsing.client.Client
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import java.util.*
 
 
-abstract class BaseRepository() {
+abstract class BaseRepository(private val vmJob: Job, private val dispatcher: CoroutineDispatcher, protected val scope: CoroutineScope = CoroutineScope(vmJob + dispatcher)) {
     protected val client = Client
-//    protected val userCache = Cache.USER
+    protected val cache = Cache
+
+    //    protected val userCache = Cache.USER
     protected val langCache = Cache.LANGUAGE
 
     fun validateCache(): Boolean {

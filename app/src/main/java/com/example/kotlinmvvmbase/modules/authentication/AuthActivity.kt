@@ -1,18 +1,16 @@
 package com.example.kotlinmvvmbase.modules.authentication
 
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.kotlinmvvmbase.R
 import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
 import com.example.kotlinmvvmbase.core.base.ui.BaseActivity
-import com.example.kotlinmvvmbase.core.base.ui.NavComponent
+import com.example.kotlinmvvmbase.core.base.navigation.NavigationComponent
 import com.example.kotlinmvvmbase.databinding.ActivityAuthBinding
 
-class AuthActivity : BaseActivity<ActivityAuthBinding, AuthActivityVM>(ActivityAuthBinding::inflate), NavComponent {
+class AuthActivity : BaseActivity<ActivityAuthBinding, AuthActivityVM>(ActivityAuthBinding::inflate), NavigationComponent {
 
     override val navController: NavController
         get() = findNavController(R.id.fragment2)

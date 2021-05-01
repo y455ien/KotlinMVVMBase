@@ -20,11 +20,9 @@ import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
 typealias InflateActivity<T> = (LayoutInflater) -> T
 
 abstract class BaseActivity<VB : ViewBinding, VM : BaseActivityViewModel>(private val inflate: InflateActivity<VB>) :
-    AppCompatActivity() {
+        AppCompatActivity() {
     protected lateinit var vm: VM
     protected lateinit var binding: VB
-//    protected var navController: NavController? = null
-//    protected lateinit var listener: NavController.OnDestinationChangedListener
 
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(ContextHelper.attachBaseContext(newBase))
@@ -58,8 +56,8 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseActivityViewModel>(privat
 
     private fun observeUnauthenticatedEvent() {
         vm.getUnauthenticatedEvent.observe(this) {
-            it.get()?.let {
-                if (!it) onShowErrorToast("Unauthenticated")
+            it.get()?.let { isAuthenticated ->
+                if (!isAuthenticated) Toast.makeText(this, "Unauthenticated", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -67,9 +65,6 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseActivityViewModel>(privat
     private fun observeNavigationEvent() {
         vm.getNavigationEvent.observe(this) { it ->
             it.get()?.let {
-//                if (navController?.currentDestination?.getAction(it.destination.actionId) != null) {
-//                    navController?.navigate(it.des1tination, it.navOptions)
-//                }
                 navigate(it)
             }
         }
@@ -77,59 +72,30 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseActivityViewModel>(privat
 
     private fun observeErrorMessageEvent() {
         vm.getErrorEvent.observe(this) {
-            it.get()?.let {
-                onShowErrorToast(it)
+            it.get()?.let { errorMessage ->
+                Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
             }
         }
     }
 
     private fun observeToastEvent() {
         vm.getToastEvent.observe(this) {
-            it.get()?.let {
-                onShowToast(it)
+            it.get()?.let { toastMessage ->
+                Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
             }
         }
     }
 
     private fun observeLoadingEvent() {
         vm.getIsLoadingEvent.observe(this) {
-            it.get()?.let {
-                if (it) onShowLoading() else onHideLoading()
+            it.get()?.let { isVisible ->
+                if (isVisible) binding.root.findViewById<ProgressBar>(R.id.progressBar).visibility = View.VISIBLE
+                else binding.root.findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
             }
         }
     }
 
-//    override fun onSupportNavigateUp(): Boolean {
-////        return navController?.navigateUp() ?: super.onSupportNavigateUp()
-//    }
-
-    override fun onResume() {
-        super.onResume()
-//        navController?.addOnDestinationChangedListener(listener)
-    }
-
-    override fun onPause() {
-//        navController?.removeOnDestinationChangedListener(listener)
-        super.onPause()
-    }
-
     abstract fun initViewModel(): VM
-
-    private fun onShowLoading() {
-        binding.root.findViewById<ProgressBar>(R.id.progressBar).visibility = View.VISIBLE
-    }
-
-    private fun onHideLoading() {
-        binding.root.findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
-    }
-
-    private fun onShowToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-    }
-
-    private fun onShowErrorToast(error: String) {
-        Toast.makeText(this, error, Toast.LENGTH_LONG).show()
-    }
 
     abstract fun navigate(navDestinationWrapper: NavDestinationWrapper?)
 }
