@@ -1,6 +1,6 @@
-package com.example.kotlinmvvmbase.core.network_manual_parsing.api
+package com.example.kotlinmvvmbase.core.network.api
 
-import com.example.kotlinmvvmbase.core.network.WebResponse
+import com.example.kotlinmvvmbase.core.network.model.WebResponse
 import com.google.gson.JsonElement
 import retrofit2.Call
 import retrofit2.http.*

@@ -1,6 +1,6 @@
 package com.example.kotlinmvvmbase.core.base.viewmodel
 
-import com.example.kotlinmvvmbase.core.network.model.error.APIError
+import com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.error.APIError
 
 interface NetworkResult<T> {
     fun onSuccess(t: T)

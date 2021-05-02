@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts
+package com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.response.datamodel.parts
 
 data class Pagination(
     val count: Int?,

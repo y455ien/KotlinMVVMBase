@@ -1,8 +1,9 @@
-package com.example.kotlinmvvmbase.core.network
+package com.example.kotlinmvvmbase.core.deprecated.network_deprecated
 
 import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
-import com.example.kotlinmvvmbase.core.network.model.error.APIErrorType
-import com.example.kotlinmvvmbase.core.network.model.error.APIError
+import com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.error.APIErrorType
+import com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.error.APIError
+import com.example.kotlinmvvmbase.core.network.model.WebResponse
 import com.google.gson.Gson
 import okhttp3.ResponseBody
 import retrofit2.Call

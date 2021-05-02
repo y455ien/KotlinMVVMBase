@@ -1,9 +1,8 @@
 package com.example.kotlinmvvmbase.core.base.repository
 
-import com.example.kotlinmvvmbase.core.network_manual_parsing.client.Client
+import com.example.kotlinmvvmbase.core.network.client.Client
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import java.util.*
 

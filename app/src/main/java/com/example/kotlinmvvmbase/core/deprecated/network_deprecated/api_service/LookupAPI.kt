@@ -1,7 +1,7 @@
-package com.example.kotlinmvvmbase.core.network.api_service
+package com.example.kotlinmvvmbase.core.deprecated.network_deprecated.api_service
 
-import com.example.kotlinmvvmbase.core.network.WebResponse
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.PartsList
+import com.example.kotlinmvvmbase.core.network.model.WebResponse
+import com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.response.datamodel.parts.PartsList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

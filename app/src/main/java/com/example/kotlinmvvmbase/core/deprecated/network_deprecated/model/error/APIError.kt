@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.network.model.error
+package com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.error
 
 import com.example.kotlinmvvmbase.constant.Constant
 

@@ -1,8 +1,8 @@
-package com.example.kotlinmvvmbase.core.network_manual_parsing.client
+package com.example.kotlinmvvmbase.core.network.client
 
 import com.example.kotlinmvvmbase.core.base.viewmodel.NetworkResult
-import com.example.kotlinmvvmbase.core.network.model.error.APIError
-import com.example.kotlinmvvmbase.core.network.model.error.APIErrorType
+import com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.error.APIError
+import com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.error.APIErrorType
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import okhttp3.ResponseBody

@@ -33,7 +33,6 @@ class ExceptionHandler(private val viewModel: BaseFragmentViewModel) : AbstractC
         rawErrorResponse?.let {
             viewModel.showErrorToast(it)
         }
-        println("HERE " + rawErrorResponse)
     }
 
     private fun handleUnauthorizedStatus(exception: HttpException) {
@@ -41,8 +40,6 @@ class ExceptionHandler(private val viewModel: BaseFragmentViewModel) : AbstractC
         rawErrorResponse?.let {
             viewModel.showErrorToast(it)
         }
-        println("HERE " + rawErrorResponse)
-
     }
 
     private fun handleUnknownException(exception: Throwable) {

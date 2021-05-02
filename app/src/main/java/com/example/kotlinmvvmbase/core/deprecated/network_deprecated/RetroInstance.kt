@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.network
+package com.example.kotlinmvvmbase.core.deprecated.network_deprecated
 
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor

@@ -1,12 +1,10 @@
 package com.example.kotlinmvvmbase.modules.business.repository
 
-import android.util.Log
 import com.example.kotlinmvvmbase.core.base.repository.BaseRepository
-import com.example.kotlinmvvmbase.core.network.WebResponse
-import com.example.kotlinmvvmbase.core.network.model.response.datamodel.parts.PartsList
-import com.example.kotlinmvvmbase.core.network_manual_parsing.client.Client
-import com.example.kotlinmvvmbase.core.network_manual_parsing.api.EndPoint
-import com.example.kotlinmvvmbase.core.network_manual_parsing.client.RequestHandler
+import com.example.kotlinmvvmbase.core.network.model.WebResponse
+import com.example.kotlinmvvmbase.core.deprecated.network_deprecated.model.response.datamodel.parts.PartsList
+import com.example.kotlinmvvmbase.core.network.api.EndPoint
+import com.example.kotlinmvvmbase.core.network.client.RequestHandler
 import kotlinx.coroutines.*
 
 class CarRepository(vmJob: Job = Job(), dispatcher: CoroutineDispatcher = Dispatchers.IO) : BaseRepository(vmJob, dispatcher) {

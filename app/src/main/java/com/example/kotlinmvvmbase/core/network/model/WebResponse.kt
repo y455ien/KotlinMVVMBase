@@ -1,4 +1,4 @@
-package com.example.kotlinmvvmbase.core.network
+package com.example.kotlinmvvmbase.core.network.model
 
 import com.google.gson.annotations.SerializedName
 

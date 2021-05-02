@@ -1,7 +1,7 @@
-package com.example.kotlinmvvmbase.core.network_manual_parsing.client
+package com.example.kotlinmvvmbase.core.network.client
 
 import com.example.kotlinmvvmbase.core.config.AppConfig
-import com.example.kotlinmvvmbase.core.network_manual_parsing.api.APIService
+import com.example.kotlinmvvmbase.core.network.api.APIService
 import com.example.kotlinmvvmbase.constant.Constant
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
