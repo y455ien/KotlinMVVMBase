@@ -16,7 +16,7 @@ object ContextHelper {
     }
 
     private fun updateContext(base: Context?): Context? {
-        val locale = Cache.getCachedLocale()
+        val locale = Cache.LANGUAGE.getCachedLocale()
         Locale.setDefault(locale)
         val res = base?.resources
         val config = Configuration(res?.configuration)

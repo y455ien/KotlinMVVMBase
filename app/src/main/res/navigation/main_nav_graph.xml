@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -29,46 +29,5 @@
         android:name="com.example.kotlinmvvmbase.modules.business.ui.home.internal_home.HomeInternal"
         android:label="fragment_home_internal"
         tools:layout="@layout/fragment_home_internal" />
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.example.kotlinmvvmbase.modules.splash.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_homeFragment2"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.kotlinmvvmbase.modules.authentication.ui.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_signupFragment"
-            app:destination="@id/signupFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/signupFragment"
-        android:name="com.example.kotlinmvvmbase.modules.authentication.ui.SignupFragment"
-        android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" >
-        <action
-            android:id="@+id/action_signupFragment_to_verificationFragment"
-            app:destination="@id/verificationFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/verificationFragment"
-        android:name="com.example.kotlinmvvmbase.modules.authentication.ui.VerificationFragment"
-        android:label="fragment_verification"
-        tools:layout="@layout/fragment_verification" >
-        <action
-            android:id="@+id/action_verificationFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+
 </navigation>

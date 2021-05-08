@@ -1,32 +1,24 @@
 package com.example.kotlinmvvmbase.core.base.repository
 
-import com.example.kotlinmvvmbase.core.base.ui.BaseCommunicator
-import com.example.kotlinmvvmbase.core.network_manual_parsing.client.Client
+import com.example.kotlinmvvmbase.core.network.client.Client
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import java.util.*
 
 
-abstract class BaseRepository() {
+abstract class BaseRepository(private val vmJob: Job, private val dispatcher: CoroutineDispatcher, protected val scope: CoroutineScope = CoroutineScope(vmJob + dispatcher)) {
     protected val client = Client
-    private val cache = Cache
+    protected val cache = Cache
 
-    fun cacheUser() {
-        //ToDO: Implement method once User model provided
+    //    protected val userCache = Cache.USER
+    protected val langCache = Cache.LANGUAGE
+
+    fun validateCache(): Boolean {
+        return Cache.isInitialized()
     }
 
-    fun getCachedUser() {
-        //ToDO: Implement method once User model provided
+    fun getLocale(): Locale {
+        return Cache.LANGUAGE.getCachedLocale()
     }
-
-    fun getCachedLanguage() {
-
-    }
-
-    fun removeCachedUser() {
-        cache.removeUser()
-    }
-
-    fun swapLanguage() {
-        cache.swapLanguageAsync()
-        BaseCommunicator.pushSwapLanguageEvent(true)
-    }
-
 }

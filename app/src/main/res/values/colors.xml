@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <color name="primary_color">#405A7B</color>
     <color name="secondary_color">#29B2FE</color>
+    <color name="secondary_color_light">#DEECF4</color>
     <color name="border_grey">#405A7B80</color>
 
     <color name="purple_200">#FFBB86FC</color>

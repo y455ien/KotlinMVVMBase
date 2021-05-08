@@ -1,6 +1,6 @@
 package com.example.kotlinmvvmbase.modules.business.viewmodel
 
-import com.example.kotlinmvvmbase.core.base.viewmodel.BaseViewModel
+import com.example.kotlinmvvmbase.core.base.viewmodel.BaseFragmentViewModel
 
-class ProfileFragmentVM : BaseViewModel() {
+class ProfileFragmentVM : BaseFragmentViewModel() {
 }
