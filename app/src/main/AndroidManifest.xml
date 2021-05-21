@@ -3,6 +3,7 @@
     package="com.example.kotlinmvvmbase">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -18,23 +19,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinMVVMBase"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".service.foreground.BasicForegroundService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".service.bound.BasicBoundService"
+            android:enabled="true"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:theme="@style/noActionBarTheme"
             android:name=".modules.authentication.AuthActivity"
-            android:configChanges="locale">
+            android:launchMode="singleInstance"
+            android:configChanges="locale"
+            android:theme="@style/noActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".modules.business.BusinessActivity"
+            android:launchMode="singleInstance"
             android:configChanges="locale" />
     </application>
 

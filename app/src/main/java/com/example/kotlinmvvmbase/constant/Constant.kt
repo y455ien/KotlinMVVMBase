@@ -28,4 +28,9 @@ object Constant {
         const val CLOSE_DURATION: Long = 3000
         const val NETWORK_ERROR_MSG = "Something went wrong"
     }
+
+    object Notification {
+        const val NOTIFICATION_CHANNEL_ID = "exampleServiceChannel"
+        const val NOTIFICATION_NAME = "Example Service Channel"
+    }
 }
