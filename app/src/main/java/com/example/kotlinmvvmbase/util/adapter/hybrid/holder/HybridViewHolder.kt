@@ -1,9 +1,9 @@
-package com.example.kotlinmvvmbase.util.adapter.hybrid
+package com.example.kotlinmvvmbase.util.adapter.hybrid.holder
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
-abstract class BetterViewHolder<T, VB: ViewBinding>(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBinding.root) {
+abstract class HybridViewHolder<T, VB: ViewBinding>(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBinding.root) {
     @Suppress("UNCHECKED_CAST")
     protected var binding = viewBinding as VB
 
