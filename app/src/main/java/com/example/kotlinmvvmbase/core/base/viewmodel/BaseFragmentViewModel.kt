@@ -2,7 +2,7 @@ package com.example.kotlinmvvmbase.core.base.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
+import com.example.kotlinmvvmbase.core.base.navigation.Destination
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.plus
 
@@ -22,7 +22,7 @@ abstract class BaseFragmentViewModel(_scope: CoroutineScope? = null) : ViewModel
         sharedViewModel.pushErrorEvent(error)
     }
 
-    fun navigateWithAction(destination: NavDestinationWrapper) {
+    fun navigateWithAction(destination: Destination) {
         sharedViewModel.pushNavigationEvent(destination)
     }
 

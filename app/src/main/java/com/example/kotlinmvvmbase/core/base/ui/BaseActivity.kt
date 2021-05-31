@@ -6,16 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
-import androidx.navigation.NavDirections
-import androidx.navigation.NavOptions
 import androidx.viewbinding.ViewBinding
 import com.example.kotlinmvvmbase.R
-import com.example.kotlinmvvmbase.core.base.viewmodel.BaseActivityViewModel
 import com.example.kotlinmvvmbase.core.base.context.ContextHelper
-import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
+import com.example.kotlinmvvmbase.core.base.navigation.Destination
+import com.example.kotlinmvvmbase.core.base.viewmodel.BaseActivityViewModel
 
 typealias InflateActivity<T> = (LayoutInflater) -> T
 
@@ -97,5 +93,5 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseActivityViewModel>(privat
 
     abstract fun initViewModel(): VM
 
-    abstract fun navigate(navDestinationWrapper: NavDestinationWrapper?)
+    abstract fun navigate(destination: Destination?)
 }

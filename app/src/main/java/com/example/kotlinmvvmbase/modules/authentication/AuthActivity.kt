@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.kotlinmvvmbase.R
-import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
+import com.example.kotlinmvvmbase.core.base.navigation.Destination
 import com.example.kotlinmvvmbase.core.base.ui.BaseActivity
 import com.example.kotlinmvvmbase.core.base.navigation.NavigationComponent
 import com.example.kotlinmvvmbase.databinding.ActivityAuthBinding
@@ -24,10 +24,10 @@ class AuthActivity : BaseActivity<ActivityAuthBinding, AuthActivityVM>(ActivityA
         setupNavComponent(activity = this)
     }
 
-    override fun navigate(navDestinationWrapper: NavDestinationWrapper?) {
-        if (navDestinationWrapper != null) {
-            if (navController.currentDestination?.getAction(navDestinationWrapper.destination.actionId) != null) {
-                navController.navigate(navDestinationWrapper.destination, navDestinationWrapper.navOptions)
+    override fun navigate(destination: Destination?) {
+        destination?.let { destination ->
+            navController.currentDestination?.getAction(destination.getActionId())?.let {
+                navController.navigate(destination.destination, destination.navOptions)
             }
         }
     }

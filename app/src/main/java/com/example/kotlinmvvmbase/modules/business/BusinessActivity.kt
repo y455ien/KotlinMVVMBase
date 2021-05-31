@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.kotlinmvvmbase.R
-import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
-import com.example.kotlinmvvmbase.core.base.ui.BaseActivity
+import com.example.kotlinmvvmbase.core.base.navigation.Destination
 import com.example.kotlinmvvmbase.core.base.navigation.NavigationComponent
+import com.example.kotlinmvvmbase.core.base.ui.BaseActivity
 import com.example.kotlinmvvmbase.databinding.ActivityMainBinding
 
 class BusinessActivity : BaseActivity<ActivityMainBinding, BusinessActivityVM>(ActivityMainBinding::inflate), NavigationComponent {
@@ -38,10 +38,10 @@ class BusinessActivity : BaseActivity<ActivityMainBinding, BusinessActivityVM>(A
         return ViewModelProvider(this).get(BusinessActivityVM::class.java)
     }
 
-    override fun navigate(navDestinationWrapper: NavDestinationWrapper?) {
-        navDestinationWrapper?.let {
-            if (navController.currentDestination?.getAction(it.destination.actionId) != null) {
-                navController.navigate(it.destination, it.navOptions)
+    override fun navigate(destination: Destination?) {
+        destination?.let { destination ->
+            navController.currentDestination?.getAction(destination.getActionId())?.let {
+                navController.navigate(destination.destination, destination.navOptions)
             }
         }
     }

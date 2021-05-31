@@ -2,7 +2,7 @@ package com.example.kotlinmvvmbase.core.base.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.kotlinmvvmbase.core.base.navigation.NavDestinationWrapper
+import com.example.kotlinmvvmbase.core.base.navigation.Destination
 
 abstract class BaseActivityViewModel: ViewModel() {
     val getIsLoadingEvent: MutableLiveData<SingleLiveEvent<Boolean>> = MutableLiveData()
@@ -11,7 +11,7 @@ abstract class BaseActivityViewModel: ViewModel() {
 
     val getErrorEvent: MutableLiveData<SingleLiveEvent<String>> = MutableLiveData()
 
-    val getNavigationEvent = MutableLiveData<SingleLiveEvent<NavDestinationWrapper>>()
+    val getNavigationEvent = MutableLiveData<SingleLiveEvent<Destination>>()
 
     val getUnauthenticatedEvent: MutableLiveData<SingleLiveEvent<Boolean>> = MutableLiveData()
 
@@ -27,8 +27,8 @@ abstract class BaseActivityViewModel: ViewModel() {
 
     fun pushErrorEvent(error: String) = getErrorEvent.postValue(SingleLiveEvent<String>(error))
 
-    fun pushNavigationEvent(action: NavDestinationWrapper) = getNavigationEvent.postValue(
-        SingleLiveEvent<NavDestinationWrapper>(action)
+    fun pushNavigationEvent(action: Destination) = getNavigationEvent.postValue(
+        SingleLiveEvent(action)
     )
 
     fun pushSwapLanguageEvent(value: Boolean) =
