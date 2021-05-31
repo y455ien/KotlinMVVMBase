@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlinmvvmbase.modules.business.BusinessActivityVM
 import com.example.kotlinmvvmbase.core.base.ui.BaseFragment
 import com.example.kotlinmvvmbase.databinding.FragmentProfileBinding
-import com.example.kotlinmvvmbase.util.adapter.hybrid.Duck
+import com.example.kotlinmvvmbase.util.adapter.hybrid.mock.Duck
 import com.example.kotlinmvvmbase.util.adapter.hybrid.HybridRecyclerAdapter
 import com.example.kotlinmvvmbase.util.adapter.hybrid.HybridTypeFactory
 import com.example.kotlinmvvmbase.modules.business.viewmodel.ProfileFragmentVM
 import com.example.kotlinmvvmbase.util.GenericViewModelFactory
-import com.example.kotlinmvvmbase.util.adapter.hybrid.item.Human
+import com.example.kotlinmvvmbase.util.adapter.hybrid.mock.Human
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileFragmentVM, BusinessActivityVM>(FragmentProfileBinding::inflate, BusinessActivityVM::class.java) {
     private lateinit var factory: GenericViewModelFactory<ProfileFragmentVM>

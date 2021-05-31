@@ -6,7 +6,10 @@ import androidx.viewbinding.ViewBinding
 import com.example.kotlinmvvmbase.R
 import com.example.kotlinmvvmbase.databinding.RecyclerViewItemBinding
 import com.example.kotlinmvvmbase.util.adapter.hybrid.holder.HybridViewHolder
-import com.example.kotlinmvvmbase.util.adapter.hybrid.item.Human
+import com.example.kotlinmvvmbase.util.adapter.hybrid.mock.Human
+import com.example.kotlinmvvmbase.util.adapter.hybrid.mock.Duck
+import com.example.kotlinmvvmbase.util.adapter.hybrid.mock.DuckHolder
+import com.example.kotlinmvvmbase.util.adapter.hybrid.mock.HumanHolder
 
 class HybridTypeFactory {
 

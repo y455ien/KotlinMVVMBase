@@ -1,8 +1,9 @@
-package com.example.kotlinmvvmbase.util.adapter.hybrid
+package com.example.kotlinmvvmbase.util.adapter.hybrid.mock
 
 import androidx.viewbinding.ViewBinding
 import com.example.kotlinmvvmbase.databinding.RecyclerViewItemBinding
 import com.example.kotlinmvvmbase.util.adapter.hybrid.holder.HybridViewHolder
+import com.example.kotlinmvvmbase.util.adapter.hybrid.mock.Duck
 
 class DuckHolder(binding: ViewBinding) : HybridViewHolder<Duck, RecyclerViewItemBinding>(binding) {
 
