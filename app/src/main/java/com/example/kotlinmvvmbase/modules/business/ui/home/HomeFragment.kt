@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.example.kotlinmvvmbase.R
+import com.example.kotlinmvvmbase.core.base.navigation.Destination
 import com.example.kotlinmvvmbase.modules.business.BusinessActivityVM
 import com.example.kotlinmvvmbase.core.base.ui.BaseFragment
 import com.example.kotlinmvvmbase.databinding.FragmentHomeBinding
@@ -32,7 +34,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeFragmentVM, BusinessA
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.goInternalButton.setOnClickListener() {
-
+            vm.navigateWithAction(Destination.Builder(HomeFragmentDirections.actionHomeFragmentToHomeInternal()).build())
         }
         binding.changeLanguageButton.setOnClickListener {
 

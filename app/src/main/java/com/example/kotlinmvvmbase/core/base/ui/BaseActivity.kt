@@ -11,6 +11,7 @@ import androidx.viewbinding.ViewBinding
 import com.example.kotlinmvvmbase.R
 import com.example.kotlinmvvmbase.core.base.context.ContextHelper
 import com.example.kotlinmvvmbase.core.base.navigation.Destination
+import com.example.kotlinmvvmbase.core.base.navigation.NavigationComponent
 import com.example.kotlinmvvmbase.core.base.viewmodel.BaseActivityViewModel
 
 typealias InflateActivity<T> = (LayoutInflater) -> T
@@ -61,7 +62,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseActivityViewModel>(privat
     private fun observeNavigationEvent() {
         vm.getNavigationEvent.observe(this) { it ->
             it.get()?.let {
-                navigate(it)
+                handleNavigation(it)
             }
         }
     }
@@ -91,7 +92,18 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseActivityViewModel>(privat
         }
     }
 
-    abstract fun initViewModel(): VM
+    private fun handleNavigation(destination: Destination?) {
+        destination?.let {
+            when (this) {
+                is NavigationComponent -> (this as NavigationComponent).navigate(destination)
+                else -> navigate(destination)
+            }
+        }
+    }
 
-    abstract fun navigate(destination: Destination?)
+    private fun navigate(destination: Destination) {
+        //ToDo: Handle old navigation without navigation component
+    }
+
+    abstract fun initViewModel(): VM
 }

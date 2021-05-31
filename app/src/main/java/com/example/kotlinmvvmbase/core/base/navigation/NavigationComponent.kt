@@ -46,4 +46,11 @@ interface NavigationComponent {
         )
         setupActionBarWithNavController(activity, navController, appBarConfiguration)
     }
+
+    fun navigate(destination: Destination) {
+        navController.currentDestination?.getAction(destination.getActionId())?.let {
+            navController.navigate(destination.destination, destination.navOptions)
+        }
+    }
+
 }
